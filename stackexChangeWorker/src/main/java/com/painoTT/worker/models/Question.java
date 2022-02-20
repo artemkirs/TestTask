@@ -11,52 +11,88 @@ import java.util.ArrayList;
 public class Question implements Serializable {
 
     @JsonProperty("tags")
-    public ArrayList<String> tags;
+    private ArrayList<String> tags;
 
     @JsonProperty("owner")
-    public Owner owner;
+    private Owner owner;
 
     @JsonProperty("is_answered")
-    public boolean isAnswered;
+    private boolean isAnswered;
 
     @JsonProperty("view_count")
-    public int viewCount;
+    private int viewCount;
 
     @JsonProperty("answer_count")
-    public int answerCount;
+    private int answerCount;
 
     @JsonProperty("score")
-    public int score;
+    private int score;
 
     @JsonProperty("last_activity_date")
-    public int lastActivityDate;
+    private int lastActivityDate;
 
     @JsonProperty("creation_date")
-    public int creationDate;
+    private int creationDate;
 
     @JsonProperty("last_edit_date")
-    public int lastEditDate;
+    private int lastEditDate;
 
     @JsonProperty("question_id")
-    public int questionId;
+    private int questionId;
 
     @JsonProperty("content_license")
-    public String contentLicense;
+    private String contentLicense;
 
     @JsonProperty("link")
-    public String link;
+    private String link;
 
     @JsonProperty("title")
-    public String title;
+    private String title;
 
     @JsonProperty("accepted_answer_id")
-    public int acceptedAnswerId;
+    private int acceptedAnswerId;
 
     @JsonProperty("closed_date")
-    public int closedDate;
+    private int closedDate;
 
     @JsonProperty("closed_reason")
-    public String closedReason;
+    private String closedReason;
+
+    @JsonProperty("bounty_amount")
+    private int bountyAmount;
+
+    @JsonProperty("bounty_closes_date")
+    private int bountyClosesDate;
+
+    public int getBountyAmount() {
+        return bountyAmount;
+    }
+
+    public void setBountyAmount(int bountyAmount) {
+        this.bountyAmount = bountyAmount;
+    }
+
+    public int getBountyClosesDate() {
+        return bountyClosesDate;
+    }
+
+    public void setBountyClosesDate(int bountyClosesDate) {
+        this.bountyClosesDate = bountyClosesDate;
+    }
+
+    public int getProtectedDate() {
+        return protectedDate;
+    }
+
+    public void setProtectedDate(int protectedDate) {
+        this.protectedDate = protectedDate;
+    }
+
+    @JsonProperty("protected_date")
+    private int protectedDate;
+
+
+
 
     public ArrayList<String> getTags() {
         return tags;

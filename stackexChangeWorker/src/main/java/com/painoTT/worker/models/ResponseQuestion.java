@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class ResponseQuestion implements Serializable {
 
     @JsonProperty("items")
-    public ArrayList<Question> items;
+    private ArrayList<Question> items;
 
     @JsonProperty("has_more")
-    public boolean hasMore;
+    private boolean hasMore;
 
     @JsonProperty("quota_max")
-    public int quotaMax;
+    private int quotaMax;
 
     @JsonProperty("quota_remaining")
-    public int quotaRemaining;
+    private int quotaRemaining;
 
     public ArrayList<Question> getItems() {
         return items;
