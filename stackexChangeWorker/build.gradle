@@ -19,9 +19,6 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.13.1'
     testImplementation "com.github.tomakehurst:wiremock-jre8:2.32.0"
     implementation group: 'org.apache.httpcomponents.client5', name: 'httpclient5', version: '5.1'
-
-
-
 }
 
 test {

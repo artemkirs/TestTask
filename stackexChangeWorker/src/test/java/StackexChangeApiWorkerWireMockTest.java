@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @WireMockTest()
-public class StackexChangeApiWorkerTest {
+public class StackexChangeApiWorkerWireMockTest {
 
     /**
      * Сервист отправки запросов в stackexChange
@@ -25,11 +25,9 @@ public class StackexChangeApiWorkerTest {
      * Объекты для формирования запросов
      */
     private final RequestQuestion requestQuestion1 = new RequestQuestion(new HashMap<>(){{
-        put("site", "stackoverflow");
         put("intitle", "javagfhtsxhthse5rg4tw");
     }});
     private final RequestQuestion requestQuestion2 = new RequestQuestion(new HashMap<>(){{
-        put("site", "stackoverflow");
         put("intitle", "java");
     }});
 
@@ -45,17 +43,17 @@ public class StackexChangeApiWorkerTest {
     }
 
     @Test
-    void stackexChangeApiWorkerTestWiremock(WireMockRuntimeInfo wmRuntimeInfo) throws Exception {
+    void findByParametersTestWiremock(WireMockRuntimeInfo wmRuntimeInfo) throws Exception {
 
         int port = wmRuntimeInfo.getHttpPort();
 
         String uri = "http://localhost:" + port;
         stackexChangeApiWorker.changBaseUri(uri);
-        stubFor(get("/search?site=stackoverflow&intitle=javagfhtsxhthse5rg4tw")
+        stubFor(get("/search?intitle=javagfhtsxhthse5rg4tw&site=stackoverflow")
                 .willReturn(ok(body1)));
         ResponseQuestion byParameters1 = stackexChangeApiWorker.findByParameters(requestQuestion1);
 
-        stubFor(get("/search?site=stackoverflow&intitle=java")
+        stubFor(get("/search?intitle=java&site=stackoverflow")
                 .willReturn(ok(body2)));
         ResponseQuestion byParameters2 = stackexChangeApiWorker.findByParameters(requestQuestion2);
 

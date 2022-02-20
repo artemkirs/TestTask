@@ -55,7 +55,7 @@ public class StackexChangeApiWorkerImpl implements StackexChangeApiWorker {
     }
 
     /**
-     * Изменить базовый uri
+     * изменить базовый uri
      * @param uri новое значение uri
      */
     @Override
@@ -75,6 +75,7 @@ public class StackexChangeApiWorkerImpl implements StackexChangeApiWorker {
             for (var key : parameters.keySet()){
                 uriBuilder.addParameter(key, parameters.get(key));
             }
+            uriBuilder.addParameter("site", "stackoverflow");
             return uriBuilder.build();
         }catch (Exception ex){
             throw new Exception("Ошибка формирования uri: " + ex.getMessage());

@@ -11,6 +11,9 @@ import ru.pianoTT.models.QuestionDTO;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Контроллер взаимодействия с вопросами
+ */
 @RestController()
 @RequestMapping("/question")
 public class QuestionController {
@@ -22,8 +25,13 @@ public class QuestionController {
     }
 
 
+    /**
+     * Поиск вопросов по параметрам
+     * @param params Параметры
+     * @return Вопросы
+     */
     @GetMapping("/search")
-    public List<QuestionDTO> greeting(@RequestParam Map<String, String> params ) {
+    public List<QuestionDTO> search(@RequestParam Map<String, String> params ) {
         return questionService.findQuestionByParameters(new RequestQuestion(params));
     }
 }
