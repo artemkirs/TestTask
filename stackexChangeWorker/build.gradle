@@ -1,0 +1,29 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':modelsDTO')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.16'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.13.1'
+    testImplementation "com.github.tomakehurst:wiremock-jre8:2.32.0"
+    implementation group: 'org.apache.httpcomponents.client5', name: 'httpclient5', version: '5.1'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}

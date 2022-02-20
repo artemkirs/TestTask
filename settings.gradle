@@ -1,0 +1,5 @@
+rootProject.name = 'TestTask'
+include 'stackexChangeWorker'
+include 'modelsDTO'
+include 'stackexChangeApi'
+

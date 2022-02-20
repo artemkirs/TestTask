@@ -1,0 +1,8 @@
+# Project exclude paths
+/.gradle/
+/modelsDTO/build/
+/modelsDTO/build/classes/java/main/
+/stackexChangeApi/build/
+/stackexChangeApi/build/classes/java/main/
+/stackexChangeWorker/build/
+/stackexChangeWorker/build/classes/java/main/
